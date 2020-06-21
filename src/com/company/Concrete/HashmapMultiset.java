@@ -59,14 +59,18 @@ public class HashmapMultiset<E> implements Multiset<E> {
 
     @Override
     public int numberOfUniqueElements() {
-        // implement the method
-        return 0;
+        return map.size();
     }
 
     @Override
     public int size() {
-        // implement the method
-        return 0;
+        int size = 0;
+
+        for (int multiplicity : map.values()) {
+            size += multiplicity;
+    }
+
+        return size;
     }
 
     @Override
