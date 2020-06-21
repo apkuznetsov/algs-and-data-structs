@@ -2,7 +2,7 @@ package com.company.Abstract;
 
 import java.util.Set;
 
-public interface Multisetable<E> {
+public interface Multiset<E> {
 
     /**
      * Add an element to the multiset.
@@ -22,7 +22,7 @@ public interface Multisetable<E> {
      * The multiplicity of each element is equal to the maximum multiplicity of
      * the corresponding elements in both multisets.
      */
-    void union(Multisetable<E> other);
+    void union(Multiset<E> other);
 
     /**
      * Intersect this multiset with another one. The result is the modified multiset (this).
@@ -30,7 +30,7 @@ public interface Multisetable<E> {
      * The multiplicity of each element is equal to the minimum multiplicity of
      * the corresponding elements in the intersecting multisets.
      */
-    void intersect(Multisetable<E> other);
+    void intersect(Multiset<E> other);
 
     /**
      * Returns multiplicity of the given element.
