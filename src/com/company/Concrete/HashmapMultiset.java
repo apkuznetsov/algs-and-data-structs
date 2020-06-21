@@ -45,7 +45,18 @@ public class HashmapMultiset<E> implements Multiset<E> {
 
     @Override
     public void intersect(Multiset<E> other) {
-        // implement the method
+        for (var entry : map.entrySet()) {
+            final E thisElem = entry.getKey();
+
+            if (!other.contains(thisElem)) {
+                map.remove(thisElem);
+            } else {
+                map.put(thisElem,
+                        Math.min(
+                                entry.getValue(),
+                                other.getMultiplicity(thisElem)));
+    }
+        }
     }
 
     @Override
