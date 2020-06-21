@@ -13,7 +13,7 @@ public class HashmapMultiset<E> implements Multiset<E> {
 
     @Override
     public void add(E elem) {
-        if(map.containsKey(elem)) {
+        if (map.containsKey(elem)) {
             map.put(elem, map.get(elem) + 1);
         } else {
             map.put(elem, 1);
@@ -27,7 +27,7 @@ public class HashmapMultiset<E> implements Multiset<E> {
         if (multiplicity == 1) {
             map.remove(elem);
         } else if (multiplicity != null && multiplicity > 1) {
-            map.put(elem, map.get(elem) - 1);;
+            map.put(elem, map.get(elem) - 1);
         }
     }
 
@@ -40,7 +40,7 @@ public class HashmapMultiset<E> implements Multiset<E> {
                     Math.max(
                             other.getMultiplicity(otherElem),
                             this.getMultiplicity(otherElem)));
-    }
+        }
     }
 
     @Override
@@ -55,7 +55,7 @@ public class HashmapMultiset<E> implements Multiset<E> {
                         Math.min(
                                 getMultiplicity(elem),
                                 other.getMultiplicity(elem)));
-    }
+            }
         }
     }
 
@@ -64,10 +64,10 @@ public class HashmapMultiset<E> implements Multiset<E> {
         Integer multiplicity = map.get(elem);
 
         if (multiplicity == null) {
-        return 0;
+            return 0;
         } else {
             return multiplicity;
-    }
+        }
     }
 
     @Override
@@ -86,7 +86,7 @@ public class HashmapMultiset<E> implements Multiset<E> {
 
         for (int multiplicity : map.values()) {
             size += multiplicity;
-    }
+        }
 
         return size;
     }
