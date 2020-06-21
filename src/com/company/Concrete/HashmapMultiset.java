@@ -54,8 +54,7 @@ public class HashmapMultiset<E> implements Multiset<E> {
 
     @Override
     public boolean contains(E elem) {
-        // implement the method
-        return false;
+        return getMultiplicity(elem) > 0;
     }
 
     @Override
