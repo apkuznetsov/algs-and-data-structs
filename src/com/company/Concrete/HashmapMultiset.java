@@ -43,8 +43,13 @@ public class HashmapMultiset<E> implements Multiset<E> {
 
     @Override
     public int getMultiplicity(E elem) {
-        // implement the method
+        Integer multiplicity = map.get(elem);
+
+        if (multiplicity == null) {
         return 0;
+        } else {
+            return multiplicity;
+    }
     }
 
     @Override
