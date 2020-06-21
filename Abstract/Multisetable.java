@@ -1,4 +1,4 @@
-interface Multisetable<E> {
+public interface Multisetable<E> {
 
     /**
      * Add an element to the multiset.
