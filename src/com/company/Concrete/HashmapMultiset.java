@@ -33,7 +33,14 @@ public class HashmapMultiset<E> implements Multiset<E> {
 
     @Override
     public void union(Multiset<E> other) {
-        // implement the method
+        Set<E> otherSet = other.toSet();
+
+        for (E otherElem : otherSet) {
+            map.put(otherElem,
+                    Math.max(
+                            other.getMultiplicity(otherElem),
+                            this.getMultiplicity(otherElem)));
+    }
     }
 
     @Override
