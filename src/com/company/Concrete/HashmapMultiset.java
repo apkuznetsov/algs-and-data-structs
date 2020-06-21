@@ -13,7 +13,11 @@ public class HashmapMultiset<E> implements Multiset<E> {
 
     @Override
     public void add(E elem) {
-        // implement the method
+        if(map.containsKey(elem)) {
+            map.put(elem, map.get(elem) + 1);
+        } else {
+            map.put(elem, 1);
+    }
     }
 
     @Override
