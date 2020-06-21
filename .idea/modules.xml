@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/algs-and-data-structs.iml" filepath="$PROJECT_DIR$/.idea/algs-and-data-structs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algs-and-data-structs.iml" filepath="$PROJECT_DIR$/algs-and-data-structs.iml" />
     </modules>
   </component>
 </project>
