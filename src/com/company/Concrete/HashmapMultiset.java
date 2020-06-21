@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class HashmapMultiset<E> implements Multiset<E> {
 
-    private Map<E, Integer> map = new HashMap<>();
+    private final Map<E, Integer> map = new HashMap<>();
 
     @Override
     public void add(E elem) {
@@ -17,12 +17,18 @@ public class HashmapMultiset<E> implements Multiset<E> {
             map.put(elem, map.get(elem) + 1);
         } else {
             map.put(elem, 1);
-    }
+        }
     }
 
     @Override
     public void remove(E elem) {
-        // implement the method
+        Integer multiplicity = map.get(elem);
+
+        if (multiplicity == 1) {
+            map.remove(elem);
+        } else if (multiplicity != null && multiplicity > 1) {
+            map.put(elem, map.get(elem) - 1);;
+        }
     }
 
     @Override
