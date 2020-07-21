@@ -1,4 +1,4 @@
-package com.company.Abstract;
+package datastructs.multiset;
 
 import java.util.Set;
 
