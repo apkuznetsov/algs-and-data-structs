@@ -1,6 +1,4 @@
-package com.company.Concrete;
-
-import com.company.Abstract.Multiset;
+package datastructs.multiset;
 
 import java.util.HashMap;
 import java.util.HashSet;
