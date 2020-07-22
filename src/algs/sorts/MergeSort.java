@@ -18,4 +18,41 @@ public class MergeSort {
         // combine: merge both sorted subarrays into sorted one
         merge(array, leftIncl, middle, rightExcl);
     }
+
+    private static void merge(int[] array, int left, int middle, int right) {
+        int leftSubarrIndex = left;         // index for the left subarray
+        int rightSubarrIndex = middle;      // index for the right subarray
+
+        int tempSubarrIndex = 0;            // index for the temp subarray
+        int[] temp = new int[right - left]; // temporary array for merging
+
+        /* get the next lesser element from one of two subarrays
+         * and then insert it in the array until one of the subarrays is empty */
+        while (leftSubarrIndex < middle
+                && rightSubarrIndex < right) {
+
+            if (array[leftSubarrIndex] <= array[rightSubarrIndex]) {
+                temp[tempSubarrIndex] = array[leftSubarrIndex];
+                leftSubarrIndex++;
+            } else {
+                temp[tempSubarrIndex] = array[rightSubarrIndex];
+                rightSubarrIndex++;
+            }
+
+            tempSubarrIndex++;
+        }
+
+        // insert all the remaining elements of the left subarray in the array
+        for (; leftSubarrIndex < middle; leftSubarrIndex++, tempSubarrIndex++) {
+            temp[tempSubarrIndex] = array[leftSubarrIndex];
+        }
+
+        // insert all the remaining elements of the right subarray in the array
+        for (; rightSubarrIndex < right; rightSubarrIndex++, tempSubarrIndex++) {
+            temp[tempSubarrIndex] = array[rightSubarrIndex];
+        }
+
+        // effective copying elements from temp to array
+        System.arraycopy(temp, 0, array, left, temp.length);
+    }
 }
