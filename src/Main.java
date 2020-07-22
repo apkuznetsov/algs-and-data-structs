@@ -1,11 +1,8 @@
-import java.util.List;
-
-import static algs.KnuthMorrisPrattAlg.searchOccurrencesByKmpAlg;
+import static algs.sorts.InsertSort.sortByInsertion;
 
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> occurrences = searchOccurrencesByKmpAlg("ABACABAD", "ABA");
-        System.out.println(occurrences); // [0, 4]
+        sortByInsertion(new int[]{21, 23, 19, 30, 11, 28}); // { 11, 19, 21, 23, 28, 30 }
     }
 }
