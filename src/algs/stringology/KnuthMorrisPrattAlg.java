@@ -1,4 +1,4 @@
-package algs;
+package algs.stringology;
 
 import org.jetbrains.annotations.NotNull;
 
